@@ -1,227 +1,68 @@
-# ReactJS Test
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Application to be used to test some skills. It is not required to know most of the toolset below before making this test -- you need to know basically JS, ReactJS and Redux (flux) and you are good to go.
+## Available Scripts
 
-## App Toolset
+In the project directory, you can run:
 
-- ReactJS
-- Redux
-- react-router (v3) ([learn more](https://github.com/ReactTraining/react-router))
-- redux-saga ([learn more](http://yelouafi.github.io/redux-saga/))
-- Tachyons ([learn more](http://tachyons.io/))
-- Feature-centric folder structure ([learn more](https://www.notion.so/Folders-Structure-0a8b8eeb07a748db97814b9e8d1397fb))
-- StandardJS (JavaScript Style Guide) ([learn more](http://standardjs.com/))
-- Webpack
-- NodeJS
-- Yarn (better alternative to npm) ([learn more](http://yarnpkg.com))
-- Server-side rendering with Client and Server hot reloading
+### `npm start`
 
-## Quick Start
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-1. Make sure you have [Node.js](https://nodejs.org/) installed (v6.0+ required)
-2. [Install Yarn](https://yarnpkg.com/en/docs/install)
-3. Run `yarn install`
-4. `npm run dev`
-5. Check out `http://localhost:3000`
-6. Have fun!
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-## API
+### `npm test`
 
-Everything is saved automatically via redux-storage on browser localStorage. There is a fake API on `src/config/api`, where you will find the following endpoints with the responses:
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-**`GET /todos`**
+### `npm run build`
 
-    200 OK
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-    {
-      ok: true,
-      problem: "NONE",
-      data: {
-        todos: [
-          {
-            id: "41701948-7d3c-457d-8b06-7293b24309b3",
-            createdAt: "2016-12-06T06:08:40.447Z",
-            completed: true,
-            listID: "def456",
-            text: "A great todo ",
-            ...and any other list attributes you want
-          },
-          {
-            id: "60d0ec43-f9a1-44ce-b20b-ae8578737045",
-            createdAt: "2016-12-06T06:08:27.939Z",
-            completed: false,
-            listID: "abc123",
-            text: "Another great todo ",
-            ...and any other list attributes you want
-          }
-        ]
-      }
-    }
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-**`GET /todos/:id`**
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-    200 OK
+### `npm run eject`
 
-    {
-      ok: true,
-      problem: "NONE",
-      data: {
-        todo: [
-          {
-            id: "41701948-7d3c-457d-8b06-7293b24309b3",
-            createdAt: "2016-12-06T06:08:40.447Z",
-            completed: true,
-            listID: "def456",
-            text: "A great todo ",
-            ...and any other list attributes you want
-          }
-        ]
-      }
-    }
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-**`GET /lists/:id`**
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-    200 OK
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-    {
-      ok: true,
-      problem: "NONE",
-      data: {
-        list: [
-          {
-            id: "abc123",
-            createdAt: "2016-12-06T06:08:40.447Z",
-            ...and any other list attributes you want,
-            todos: [
-              {
-                id: "41701948-7d3c-457d-8b06-7293b24309b3",
-                createdAt: "2016-12-06T06:08:40.447Z",
-                completed: true,
-                listID: "abc123 ",
-                text: "A great todo ",
-                ...and any other list attributes you want
-              }
-            ]
-          }
-        ]
-      }
-    }
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-**`GET /lists`**
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-    200 OK
+### Code Splitting
 
-    {
-      ok: true,
-      problem: "NONE",
-      data: {
-        lists: [
-          {
-            id: "abc123",
-            createdAt: "2016-12-06T06:08:40.447Z",
-            name: "A Productive List",
-            ...and any other list attributes you want
-          },
-          {
-            id: "def456",
-            createdAt: "2016-12-06T06:08:50.447Z",
-            name: "Another Productive List",
-            ...and any other list attributes you want
-          }
-        ]
-      }
-    }
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
+### Analyzing the Bundle Size
 
-**`GET /:any`**
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-    404 Not Found
+### Making a Progressive Web App
 
-    {
-      ok: false,
-      problem: "CLIENT_ERROR",
-      data: {
-        error: 'Item not found'
-      }
-    }
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
+### Advanced Configuration
 
-**`POST /lists`**
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-**Accepted attributes:**
+### Deployment
 
-| Attr | Description                  | Required |  
-| ---- | ---------------------------- | ---------|  
-| name | the name of the list         | true     |
-| any  | any other attribute you want | false    |
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-    200 OK
+### `npm run build` fails to minify
 
-    {
-      ok: true,
-      problem: "NONE",
-      data: {
-        list: {
-          id: "abc123",
-          createdAt: "2016-12-06T06:08:40.447Z",
-          name: "A Productive List",
-          ...and any other list attributes you want
-        }
-      }
-    }
-
-
-**`POST /todos`**
-
-**Accepted attributes:**
-
-| Attr    | Description                    | Required |  
-| ------- | ------------------------------ | ---------|  
-| text    | the body of the item           | true     |
-| listID  | the parent list of the item    | true     |
-| any     | any other attribute you want   | false    |
-
-    200 OK
-
-    {
-      ok: true,
-      problem: "NONE",
-      data: {
-        todo: {
-          id: "abc123",
-          createdAt: "2016-12-06T06:08:40.447Z",
-          completed: false,
-          listID: "def456",
-          ...and any other todo attributes you want
-        }
-      }
-    }
-
-
-**`PUT /todos/:id`**
-
-**Accepted attributes:**
-
-| Attr       | Description                   | Required |  
-| ---------- | ----------------------------- | ---------|  
-| text       | the body of the it            | true     |
-| completed  | if this todo was completed    | true     |
-| any        | any other attribute you wan   | false    |
-
-    200 OK
-
-    {
-      ok: true,
-      problem: "NONE",
-      data: {
-        todo: {
-          id: "abc123",
-          createdAt: "2016-12-06T06:08:40.447Z",
-          completed: false,
-          listID: "def456",
-          ...and any other todo attributes you want
-        }
-      }
-    }
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
